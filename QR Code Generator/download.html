@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QR Code Download</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your QR Code</h1>
+        <p>Scan this QR code with your device to access the content:</p>
+        <p id="qr-code-text"></p>
+
+        <a href="index.html" class="back-btn">Back to QR Code Generator</a>
+    </div>
+
+    <script>
+        // Get the QR code image and text from the URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const imageUrl = params.get("image");
+        const qrText = params.get("text");
+
+        // Set the QR code image and text on the page
+        const qrCodeImage = document.getElementById("qr-code-image");
+        qrCodeImage.src = imageUrl;
+        const qrCodeText = document.getElementById("qr-code-text");
+        qrCodeText.innerText = qrText;
+    </script>
+</body>
+
+</html>

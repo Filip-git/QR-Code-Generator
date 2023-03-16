@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <div class="grid">
+        <h2>QR CODE GENERATOR</h2> <br>
+
+        <select id="size">
+            <option value="100">100x100</option>
+            <option value="150">150x150</option>
+            <option value="200">200x200</option>
+            <option value="300" selected>300x300</option>
+        </select>
+        <br><br>
+        <textarea placeholder="Enter Your Text" id="text"></textarea>
+        <br><br>
+        <input type="submit" value="Generate QR Code" onclick="generateQRCode()">
+        <br><br>
+        <div id="image-container"></div>
+        <br>
+        <button id="download-btn" style="display: none;">Download</button>
+    </div>
+
+
+</body>
+
+</html>
